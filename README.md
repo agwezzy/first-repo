@@ -1,4 +1,5 @@
-# first-repo
+``MiraaNow
+
 This is a software development project idea for an on-demand khat/miraa delivery application, tailored for convenience, speed, and product freshness. 
 Project Name: "MiraaNow" (On-Demand Khat Delivery App)
 Core Concept: A mobile-first, geo-location-based marketplace connecting local licensed khat vendors with consumers, offering real-time tracking, quality assurance, and doorstep deliver.
