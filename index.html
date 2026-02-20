@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MyraaHub - Miraa Delivery Service</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">🌿 MyraaHub</div>
+            <ul class="nav-links">
+                <li><a href="#shop">Shop</a></li>
+                <li><a href="#cart">Cart</a></li>
+                <li><a href="#about">About</a></li>
+            </ul>
+            <div class="cart-icon-container">
+                <button class="cart-icon" id="cartBtn">🛒 <span id="cartCount">0</span></button>
+            </div>
+            <button class="burger">&#9776;</button>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Welcome to MyraaHub</h1>
+                <p>Fresh Miraa delivered to your doorstep</p>
+                <a href="#shop" class="btn btn-primary">Order Now</a>
+            </div>
+        </section>
+
+        <!-- Shop Section -->
+        <section id="shop" class="shop">
+            <div class="container">
+                <h2>Our Products</h2>
+                <div class="products-grid" id="productsGrid">
+                    <!-- Products will be inserted here by JavaScript -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Cart Section -->
+        <section id="cart" class="cart-section">
+            <div class="container">
+                <h2>Your Cart</h2>
+                <div class="cart-content">
+                    <div class="cart-items" id="cartItems">
+                        <p class="empty-cart">Your cart is empty</p>
+                    </div>
+                    <div class="cart-summary">
+                        <h3>Order Summary</h3>
+                        <div class="summary-item">
+                            <span>Subtotal:</span>
+                            <span id="subtotal">Ksh 0</span>
+                        </div>
+                        <div class="summary-item">
+                            <span>Delivery Fee:</span>
+                            <span id="deliveryFee">Ksh 150</span>
+                        </div>
+                        <div class="summary-item total">
+                            <span>Total:</span>
+                            <span id="total">Ksh 0</span>
+                        </div>
+                        <button class="btn btn-primary btn-checkout" id="checkoutBtn">Proceed to Checkout</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Checkout Section -->
+        <section id="checkout" class="checkout-section hidden">
+            <div class="container">
+                <h2>Delivery Information</h2>
+                <form id="checkoutForm" class="checkout-form">
+                    <div class="form-group">
+                        <label for="name">Full Name *</label>
+                        <input type="text" id="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone Number *</label>
+                        <input type="tel" id="phone" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email *</label>
+                        <input type="email" id="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="address">Delivery Address *</label>
+                        <textarea id="address" rows="4" required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="city">City *</label>
+                        <input type="text" id="city" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="postal">Postal Code *</label>
+                        <input type="text" id="postal" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="deliveryTime">Preferred Delivery Time *</label>
+                        <select id="deliveryTime" required>
+                            <option value="">Select a time</option>
+                            <option value="morning">Morning (8:00 AM - 12:00 PM)</option>
+                            <option value="afternoon">Afternoon (12:00 PM - 4:00 PM)</option>
+                            <option value="evening">Evening (4:00 PM - 8:00 PM)</option>
+                        </select>
+                    </div>
+                    <div class="form-actions">
+                        <button type="button" class="btn btn-secondary" id="backBtn">Back to Cart</button>
+                        <button type="submit" class="btn btn-primary">Place Order</button>
+                    </div>
+                </form>
+            </div>
+        </section>
+
+        <!-- Order Confirmation Section -->
+        <section id="confirmation" class="confirmation-section hidden">
+            <div class="container">
+                <div class="confirmation-card">
+                    <div class="success-icon">✓</div>
+                    <h2>Order Confirmed!</h2>
+                    <p>Thank you for your order</p>
+                    <div class="confirmation-details">
+                        <div class="detail-item">
+                            <span class="label">Order Number:</span>
+                            <span id="orderNumber" class="value"></span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="label">Delivery Time:</span>
+                            <span id="confirmDeliveryTime" class="value"></span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="label">Total Amount:</span>
+                            <span id="confirmTotal" class="value"></span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="label">Status:</span>
+                            <span class="value status-badge">Confirmed</span>
+                        </div>
+                    </div>
+                    <p class="confirmation-message">Your Miraa will be delivered as scheduled. You'll receive a call when the rider is on the way.</p>
+                    <button class="btn btn-primary" id="continueShoppingBtn">Continue Shopping</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="about">
+            <div class="container">
+                <h2>About MyraaHub</h2>
+                <div class="about-content">
+                    <div class="about-item">
+                        <h3>🚚 Fast Delivery</h3>
+                        <p>Same-day delivery available in selected areas. Fresh Miraa delivered to your door.</p>
+                    </div>
+                    <div class="about-item">
+                        <h3>🌱 Quality Assured</h3>
+                        <p>All our Miraa is sourced from trusted farms and carefully selected for freshness.</p>
+                    </div>
+                    <div class="about-item">
+                        <h3>💳 Secure Payment</h3>
+                        <p>Multiple payment options including Mpesa, credit card, and cash on delivery.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 MyraaHub. All rights reserved. | Order fresh Miraa online</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
